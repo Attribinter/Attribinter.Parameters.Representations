@@ -1,4 +1,4 @@
-﻿namespace Attribinter.Parameters.Representations;
+﻿namespace Paraminter.Parameters.Representations;
 
 /// <summary>Handles creation of parameter representations.</summary>
 /// <typeparam name="TParameter">The type of the parameters.</typeparam>
