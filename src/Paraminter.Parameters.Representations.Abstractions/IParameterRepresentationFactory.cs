@@ -8,5 +8,6 @@ public interface IParameterRepresentationFactory<in TParameter, out TParameterRe
     /// <summary>Creates a representation of the provided parameter.</summary>
     /// <param name="parameter">The parameter that is represented by the created parameter representation.</param>
     /// <returns>The created parameter representation.</returns>
-    public abstract TParameterRepresentation Create(TParameter parameter);
+    public abstract TParameterRepresentation Create(
+        TParameter parameter);
 }
