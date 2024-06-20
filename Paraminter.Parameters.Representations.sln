@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paraminter.Parameters.Representations.Abstractions", "src\Paraminter.Parameters.Representations.Abstractions\Paraminter.Parameters.Representations.Abstractions.csproj", "{6BB47867-9DD1-4A0E-96F7-18146341E459}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D5CFFE87-4987-400E-ACDD-59F70B837F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstractions", "src\Abstractions\Abstractions.csproj", "{3A4986DD-6F6E-4B37-8F17-F71B839FF7E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,15 +21,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6BB47867-9DD1-4A0E-96F7-18146341E459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BB47867-9DD1-4A0E-96F7-18146341E459}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BB47867-9DD1-4A0E-96F7-18146341E459}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BB47867-9DD1-4A0E-96F7-18146341E459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A4986DD-6F6E-4B37-8F17-F71B839FF7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4986DD-6F6E-4B37-8F17-F71B839FF7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4986DD-6F6E-4B37-8F17-F71B839FF7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4986DD-6F6E-4B37-8F17-F71B839FF7E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94AEE35B-6B36-4883-A0BB-4D61A544AA4D}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A4986DD-6F6E-4B37-8F17-F71B839FF7E4} = {D5CFFE87-4987-400E-ACDD-59F70B837F96}
 	EndGlobalSection
 EndGlobal
