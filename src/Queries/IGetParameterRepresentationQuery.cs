@@ -1,4 +1,4 @@
-﻿namespace Paraminter.Parameters.Representations.Queries;
+﻿namespace Paraminter.Parameters.Representations;
 
 using Paraminter.Queries;
 
