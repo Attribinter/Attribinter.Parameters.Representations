@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Parameters.Representations</AssemblyName>
+
+        <PackageId>Paraminter.Parameters.Representations</PackageId>
+        <Description>Provides general implementations of services related to Paraminter parameter-representations.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="$(SolutionDir)\src\Abstractions\Abstractions.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Queries\Queries.csproj" />
+    </ItemGroup>
+
+</Project>
