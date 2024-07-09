@@ -20,24 +20,36 @@ public sealed class Handle
     }
 
     [Fact]
-    public void ValidArguments_HandlesCommand()
+    public void ValidArguments_HandlesQuery()
     {
         var fixture = FixtureFactory.Create<object, object>();
 
         var parameter = Mock.Of<object>();
 
-        Target(fixture, parameter);
+        var response = Mock.Of<object>();
 
-        fixture.DelegatingCoordinatorMock.Verify((coordinator) => coordinator.Handle(It.Is(MatchCommandCreationDelegate(parameter))), Times.Once);
+        fixture.DelegatingCoordinatorMock.Setup(CoordinatorExpression<object, object>(parameter)).Returns(response);
+
+        var result = Target(fixture, parameter);
+
+        Assert.Same(response, result);
+
+        fixture.DelegatingCoordinatorMock.Verify(CoordinatorExpression<object, object>(parameter), Times.Once);
     }
 
-    private static Expression<Func<DCreateQuery<IGetParameterRepresentationQuery<TParameter>, IGetParameterRepresentationQueryFactory>, bool>> MatchCommandCreationDelegate<TParameter>(
+    private static Expression<Func<IQueryCoordinator<IGetParameterRepresentationQuery<TParameter>, TResponse, IGetParameterRepresentationQueryFactory>, TResponse>> CoordinatorExpression<TParameter, TResponse>(
         TParameter parameter)
     {
-        return (commandCreationDelegate) => VerifyCommandCreationDelegate(commandCreationDelegate, parameter);
+        return (coordinator) => coordinator.Handle(It.Is(MatchQueryCreationDelegate(parameter)));
     }
 
-    private static bool VerifyCommandCreationDelegate<TParameter>(
+    private static Expression<Func<DCreateQuery<IGetParameterRepresentationQuery<TParameter>, IGetParameterRepresentationQueryFactory>, bool>> MatchQueryCreationDelegate<TParameter>(
+        TParameter parameter)
+    {
+        return (queryCreationDelegate) => VerifyQueryCreationDelegate(queryCreationDelegate, parameter);
+    }
+
+    private static bool VerifyQueryCreationDelegate<TParameter>(
         DCreateQuery<IGetParameterRepresentationQuery<TParameter>, IGetParameterRepresentationQueryFactory> queryCreationDelegate,
         TParameter parameter)
     {
