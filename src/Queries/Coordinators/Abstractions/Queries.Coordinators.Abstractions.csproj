@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Parameters.Representations.Queries.Coordinators.Abstractions</AssemblyName>
+
+        <PackageId>Paraminter.Parameters.Representations.Queries.Coordinators.Abstractions</PackageId>
+        <Description>Provides abstractions of services related to coordinators of queries related to Paraminter parameter representations.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="$(SolutionDir)\src\Queries\Core\Queries.Core.csproj" />
+    </ItemGroup>
+
+</Project>
