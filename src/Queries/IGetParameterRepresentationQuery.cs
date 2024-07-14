@@ -2,7 +2,7 @@
 
 using Paraminter.Queries;
 
-/// <summary>Represents a query for a parameter representation.</summary>
+/// <summary>Represents a query for a parameter representation, given the actual parameter.</summary>
 /// <typeparam name="TParameter">The type of the represented parameter.</typeparam>
 public interface IGetParameterRepresentationQuery<out TParameter>
     : IQuery
